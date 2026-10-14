@@ -1,10 +1,6 @@
-# Part 1: Matrix games and the clairvoyant game
-
-*Part of a project on solving heads-up river poker spots by exploiting the structure of the payoff space instead of running an iterative solver.*
+# Matrix games and the clairvoyant game
 
 **What this part does.** It derives the equilibrium of a zero-sum matrix game, then applies it to the smallest interesting poker game, the [*clairvoyant game*](glossary.md#clairvoyant-game). Along the way it shows (i) how to find an equilibrium by indifference, (ii) how dominance explains why the best hand should always bet, and (iii) how to certify an answer against the *full* game rather than a restricted one.
-
-**Prerequisites.** Linear algebra and basic probability. No poker knowledge is assumed; terms are defined in the [glossary](glossary.md).
 
 **Result in one line.** Pot $=1$, bet size $s$: the bettor bluffs with a fraction $\frac{s}{1+s}$ of its weak hands, the caller calls with probability $\frac{1}{1+s}$, and the value of the game to the caller is $\frac{1}{2(1+s)}$.
 
