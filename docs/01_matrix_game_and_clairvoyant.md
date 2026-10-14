@@ -31,7 +31,7 @@ $$
 A *mixed strategy* is a probability vector. The set of mixed strategies of A is the **probability simplex**
 
 $$
-\Delta^{m-1} = \Big\{ \sigma \in \mathbb{R}^m \;:\; \sigma_i \ge 0,\ \sum_{i=1}^m \sigma_i = 1 \Big\},
+\Delta^{m-1} = \left\lbrace \sigma \in \mathbb{R}^m \;:\; \sigma_i \ge 0,\ \sum_{i=1}^m \sigma_i = 1 \right\rbrace,
 $$
 
 where the exponent is its dimension (the sum-to-one constraint removes one degree of freedom). Its vertices are the pure strategies $e_1,\dots,e_m$. Likewise $\tau \in \Delta^{n-1}$ for B. If the players randomize independently, the expected payoff is
@@ -304,7 +304,7 @@ $$
 
 **Numerical sanity check ($s=1$).** $\sigma^\star = (\tfrac12,\tfrac12)$, $\tau^\star=(\tfrac12,\tfrac12,0,0)$, $v=\tfrac14$. The columns give $(\tfrac14,\tfrac14,\tfrac12,\tfrac12)$ and the rows give $(\tfrac14,\tfrac14)$. ✓
 
-**Uniqueness of A's strategy (closing the dominance caveat).** For a general $x$ (A's call probability), the payoffs of A against the four columns are $\tfrac12-\tfrac{s}{2}x$, $\tfrac x2$, $\tfrac12$, $\tfrac{1+s}{2}x$. The last two are never below the first two, so A's guaranteed payoff is $\min\{\tfrac12-\tfrac s2 x,\ \tfrac x2\}$. The first term decreases in $x$ and the second increases, so the maximum is attained at a single point, $x^\star = \tfrac{1}{1+s}$. Since every equilibrium strategy of B must be a best response to A's (unique) optimal strategy (Proposition 1), and $\mathsf{kk},\mathsf{kb}$ are strictly worse than $v$ against it, **no equilibrium of the full game ever checks the nuts.** The restriction "B always bets value" used in the first derivation is therefore not an assumption but a consequence.
+**Uniqueness of A's strategy (closing the dominance caveat).** For a general $x$ (A's call probability), the payoffs of A against the four columns are $\tfrac12-\tfrac{s}{2}x$, $\tfrac x2$, $\tfrac12$, $\tfrac{1+s}{2}x$. The last two are never below the first two, so A's guaranteed payoff is $\min\left(\tfrac12-\tfrac s2 x,\ \tfrac x2\right)$. The first term decreases in $x$ and the second increases, so the maximum is attained at a single point, $x^\star = \tfrac{1}{1+s}$. Since every equilibrium strategy of B must be a best response to A's (unique) optimal strategy (Proposition 1), and $\mathsf{kk},\mathsf{kb}$ are strictly worse than $v$ against it, **no equilibrium of the full game ever checks the nuts.** The restriction "B always bets value" used in the first derivation is therefore not an assumption but a consequence.
 
 ---
 
