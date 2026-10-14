@@ -1,4 +1,4 @@
-# Naive Nash: A Naive Approach to GTO Poker
+# A Naive Approach to GTO Poker
 
 > Can heads-up poker spots be solved analytically by exploiting the structure of the
 > payoff space, instead of running a numerical solver?
