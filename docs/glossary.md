@@ -54,9 +54,6 @@ A [bet](#bet) made with a hand that is likely to win if [called](#call).
 
 ## Game-theory terms
 
-## Clairvoyant game
-A toy game in which one player's hand is fixed and known, so the other player effectively "sees through" it. See Part 1.
-
 ## Exploitability
 How much a pair of strategies loses against best responses, summed over both players. It is zero exactly at an equilibrium. Defined formally in Part 1, Section 2.5.
 
