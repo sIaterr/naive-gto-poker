@@ -25,7 +25,7 @@ $$
 A *mixed strategy* is a probability vector. The set of mixed strategies of A is the **probability simplex**
 
 $$
-\Delta^{m-1} = \left\lbrace \sigma \in \mathbb{R}^m \thickspace :\thickspace  \sigma_i \ge 0,\ \sum_{i=1}^m \sigma_i = 1 \right\rbrace,
+\Delta^{m-1} = \left\lbrace \sigma \in \mathbb{R}^m \ :\  \sigma_i \ge 0,\ \sum_{i=1}^m \sigma_i = 1 \right\rbrace,
 $$
 
 where the exponent is its dimension (the sum-to-one constraint removes one degree of freedom). Its vertices are the pure strategies $e_1,\dots,e_m$. Likewise $\tau \in \Delta^{n-1}$ for B. If the players randomize independently, the expected payoff is
@@ -49,13 +49,13 @@ A best response can always be taken pure. This is the reason evaluating payoffs 
 **Minimax theorem (von Neumann, 1928).** For every real matrix $M$,
 
 $$
-v := \max_{\sigma}\min_{\tau}\ \sigma^\top M\tau \thickspace =\thickspace  \min_{\tau}\max_{\sigma}\ \sigma^\top M\tau .
+v := \max_{\sigma}\min_{\tau}\ \sigma^\top M\tau \ =\  \min_{\tau}\max_{\sigma}\ \sigma^\top M\tau .
 $$
 
 A **saddle point** (equilibrium) is a pair $(\sigma^\star,\tau^\star)$ with
 
 $$
-\sigma^\top M\tau^\star \thickspace \le\thickspace  \sigma^{\star\top} M\tau^\star \thickspace \le\thickspace  \sigma^{\star\top} M\tau \qquad \text{for all } \sigma,\tau .
+\sigma^\top M\tau^\star \ \le\  \sigma^{\star\top} M\tau^\star \ \le\  \sigma^{\star\top} M\tau \qquad \text{for all } \sigma,\tau .
 $$
 
 It always exists, and $\sigma^{\star\top} M\tau^\star = v$. The **value** $v$ is unique, although the saddle point need not be.
@@ -81,7 +81,7 @@ $$
 
 If $\sigma^\star \ge 0$ and $\tau^\star \ge 0$ entrywise, then $(\sigma^\star,\tau^\star)$ is a saddle point with value $v$. Conversely, any saddle point with full support on both sides is of this form.
 
-*Proof.* The vectors sum to one by construction. We have $M\tau^\star = \frac1\kappa \mathbf 1 = v\mathbf 1$ and $M^\top\sigma^\star = v\mathbf 1$. So for any $\sigma$, $\sigma^\top M\tau^\star = v\thinspace \sigma^\top\mathbf 1 = v$, and for any $\tau$, $\sigma^{\star\top}M\tau = v$. Both saddle inequalities hold with equality. Conversely, by Proposition 1 a full-support equilibrium satisfies $M\tau^\star = v\mathbf 1$, so $\tau^\star = vM^{-1}\mathbf 1$, and $\mathbf 1^\top\tau^\star=1$ fixes $v = 1/\kappa$. $\square$
+*Proof.* The vectors sum to one by construction. We have $M\tau^\star = \frac1\kappa \mathbf 1 = v\mathbf 1$ and $M^\top\sigma^\star = v\mathbf 1$. So for any $\sigma$, $\sigma^\top M\tau^\star = v\ \sigma^\top\mathbf 1 = v$, and for any $\tau$, $\sigma^{\star\top}M\tau = v$. Both saddle inequalities hold with equality. Conversely, by Proposition 1 a full-support equilibrium satisfies $M\tau^\star = v\mathbf 1$, so $\tau^\star = vM^{-1}\mathbf 1$, and $\mathbf 1^\top\tau^\star=1$ fixes $v = 1/\kappa$. $\square$
 
 **When this fails.** If some entry of $\sigma^\star$ or $\tau^\star$ is negative, no full-support equilibrium exists, and the equilibrium lives on a smaller *support* (a subset of the pure strategies). Then one applies the same formula to square submatrices of $M$ and checks the inequalities of Proposition 1 outside the support. If $M$ is not square, equilibria also live on supports. Finding the right support is the hard part in general; the algebra afterwards is a linear solve.
 
@@ -90,7 +90,7 @@ If $\sigma^\star \ge 0$ and $\tau^\star \ge 0$ entrywise, then $(\sigma^\star,\t
 For any pair $(\sigma,\tau)$ (not necessarily an equilibrium), define
 
 $$
-\varepsilon(\sigma,\tau) := \max_i (M\tau)_i - \min_j (\sigma^\top M)_j \thickspace \ge\thickspace  0 .
+\varepsilon(\sigma,\tau) := \max_i (M\tau)_i - \min_j (\sigma^\top M)_j \ \ge\  0 .
 $$
 
 By (1) the first term is what A earns by best-responding to $\tau$, and the second is what A earns when B best-responds to $\sigma$. We have $\max_i (M\tau)_i \ge v \ge \min_j(\sigma^\top M)_j$, so $\varepsilon \ge 0$, and $\varepsilon = 0$ exactly when $(\sigma,\tau)$ is a saddle point. This number, [**exploitability**](glossary.md#exploitability), is how much a pair of strategies loses to best responses, summed over both players (some authors divide by two). It is the accuracy measure used throughout this project, and it must always be computed in the **full** game, not a restricted version of it.
@@ -130,7 +130,7 @@ A has two pure strategies: $\mathsf f$ (fold) and $\mathsf c$ (call), both used 
 The entry for each pair is the average of the table above over B's hand, with weights $\tfrac12$ each. For instance, $(\mathsf c, \mathsf{bk})$: $\tfrac12(-s) + \tfrac12(1) = \tfrac{1-s}{2}$.
 
 $$
-M \thickspace =\thickspace 
+M \ =\ 
 \begin{array}{c|cccc}
  & \mathsf{bk} & \mathsf{bb} & \mathsf{kk} & \mathsf{kb} \cr  \hline
 \mathsf f & \tfrac12 & 0 & \tfrac12 & 0 \cr 
@@ -198,7 +198,7 @@ M_{\text{red}} = \begin{pmatrix} \tfrac12 & 0 \cr  \tfrac{1-s}{2} & \tfrac12 \en
 \qquad\text{rows: } \mathsf f,\mathsf c;\quad \text{columns: } \mathsf{bk},\mathsf{bb}.
 $$
 
-Let $x$ be the probability that A calls, and let $y$ be the probability that B bets (bluffs) with air; B always bets the nuts. Then $\sigma = (1-x,\thinspace x)$ and $\tau = (1-y,\thinspace y)$. We derive the solution three ways; they must agree.
+Let $x$ be the probability that A calls, and let $y$ be the probability that B bets (bluffs) with air; B always bets the nuts. Then $\sigma = (1-x,\ x)$ and $\tau = (1-y,\ y)$. We derive the solution three ways; they must agree.
 
 ### 5.1 By hand: two indifference conditions
 
@@ -232,22 +232,22 @@ $$
 \sigma^\star = \Big(\tfrac{s}{1+s},\ \tfrac{1}{1+s}\Big),\qquad
 v = \frac{1}{2(1+s)},
 $$
-using $M_{\text{red}}^{-\top}\mathbf 1 = (2s,\thinspace 2)^\top$. All entries are nonnegative for every $s \gt 0$, so Proposition 2 applies.
+using $M_{\text{red}}^{-\top}\mathbf 1 = (2s,\ 2)^\top$. All entries are nonnegative for every $s \gt 0$, so Proposition 2 applies.
 
 ### 5.3 By calculus, with a boundary
 
 Work in the full game with **behavioral** coordinates: $x$ as before, $y_{\text{nuts}}$ and $y_{\text{air}}$ the probabilities that B bets with each hand, all in $[0,1]$. Reading the table of Section 3.2,
 
 $$
-P(x, y_{\text{nuts}}, y_{\text{air}}) \thickspace =\thickspace  -\frac s2\thinspace  x\thinspace  y_{\text{nuts}} \thickspace +\thickspace  \frac12\Big[(1+s)\thinspace x\thinspace y_{\text{air}} + 1 - y_{\text{air}}\Big].
+P(x, y_{\text{nuts}}, y_{\text{air}}) \ =\  -\frac s2\  x\  y_{\text{nuts}} \ +\  \frac12\Big[(1+s)\ x\ y_{\text{air}} + 1 - y_{\text{air}}\Big].
 $$
 
 $P$ is affine in $x$ for fixed $(y_{\text{nuts}},y_{\text{air}})$ and affine in $(y_{\text{nuts}},y_{\text{air}})$ for fixed $x$. The partial derivatives are
 
 $$
-\frac{\partial P}{\partial x} = \frac12\big[-s\thinspace y_{\text{nuts}} + (1+s)\thinspace y_{\text{air}}\big],\qquad
-\frac{\partial P}{\partial y_{\text{nuts}}} = -\frac s2\thinspace x,\qquad
-\frac{\partial P}{\partial y_{\text{air}}} = \frac12\big[(1+s)\thinspace x - 1\big].
+\frac{\partial P}{\partial x} = \frac12\big[-s\ y_{\text{nuts}} + (1+s)\ y_{\text{air}}\big],\qquad
+\frac{\partial P}{\partial y_{\text{nuts}}} = -\frac s2\ x,\qquad
+\frac{\partial P}{\partial y_{\text{air}}} = \frac12\big[(1+s)\ x - 1\big].
 $$
 
 The optimality conditions for a maximizer (A) and a minimizer (B) on $[0,1]$ are:
@@ -264,7 +264,7 @@ $$
 y_{\text{air}}^\star = \frac{s}{1+s},\qquad x^\star = \frac{1}{1+s}.
 $$
 
-*Certifying it.* At $(x^\star,\thinspace 1,\thinspace y_{\text{air}}^\star)$: $\partial P/\partial x = 0$, $\partial P/\partial y_{\text{air}} = 0$, and $\partial P/\partial y_{\text{nuts}} = -\tfrac{s}{2(1+s)} \lt 0$ at the upper bound. For fixed $y^\star$, $P$ does not depend on $x$ at all, so every $x$ (including $x^\star$) is a best response. For fixed $x^\star$, $P$ is affine in $y$ with slope $(-\tfrac{s x^\star}{2},\thinspace 0)$, so the minimum over $[0,1]^2$ is attained at $y_{\text{nuts}}=1$ with $y_{\text{air}}$ arbitrary, and $y^\star_{\text{air}}$ qualifies. Hence it is a saddle point of the full game, and again $v = P(x^\star,1,y^\star_{\text{air}}) = \frac{1}{2(1+s)}$.
+*Certifying it.* At $(x^\star,\ 1,\ y_{\text{air}}^\star)$: $\partial P/\partial x = 0$, $\partial P/\partial y_{\text{air}} = 0$, and $\partial P/\partial y_{\text{nuts}} = -\tfrac{s}{2(1+s)} \lt 0$ at the upper bound. For fixed $y^\star$, $P$ does not depend on $x$ at all, so every $x$ (including $x^\star$) is a best response. For fixed $x^\star$, $P$ is affine in $y$ with slope $(-\tfrac{s x^\star}{2},\ 0)$, so the minimum over $[0,1]^2$ is attained at $y_{\text{nuts}}=1$ with $y_{\text{air}}$ arbitrary, and $y^\star_{\text{air}}$ qualifies. Hence it is a saddle point of the full game, and again $v = P(x^\star,1,y^\star_{\text{air}}) = \frac{1}{2(1+s)}$.
 
 ---
 
@@ -305,7 +305,7 @@ $$
 ## 7. Reading the result
 
 $$
-\boxed{\thickspace x^\star = \frac{1}{1+s},\qquad y^\star = \frac{s}{1+s},\qquad v = \frac{1}{2(1+s)}\thickspace }
+\boxed{\ x^\star = \frac{1}{1+s},\qquad y^\star = \frac{s}{1+s},\qquad v = \frac{1}{2(1+s)}\ }
 $$
 
 - **A's calling frequency** $x^\star = \frac{\text{pot}}{\text{pot}+\text{bet}}$ is the [*minimum defense frequency*](glossary.md#minimum-defense-frequency): A must call often enough that bluffing is exactly break-even for B (a bluff risks $s$ to win $1$, so it breaks even when A folds with probability $\frac{s}{1+s}$).
@@ -332,7 +332,7 @@ Limits: as $s\to 0$, A always calls, B never bluffs, and $v\to\tfrac12$. As $s\t
 5. **Dominance was weak.** Safe here only thanks to the uniqueness argument of Section 6.
 
 **Structural limits of the method as developed so far:**
-- **Normal form does not scale.** With $N$ hands and $k$ actions per hand a player has $k^N$ pure strategies, so $M$ cannot even be written down. The general framework has to be the **sequence form**, where a strategy is the vector of probabilities of reaching each action sequence, $P = r_A^\top M\thinspace  r_B$ is exactly bilinear, and the constraints are linear. Its size is linear in $N$.
+- **Normal form does not scale.** With $N$ hands and $k$ actions per hand a player has $k^N$ pure strategies, so $M$ cannot even be written down. The general framework has to be the **sequence form**, where a strategy is the vector of probabilities of reaching each action sequence, $P = r_A^\top M\  r_B$ is exactly bilinear, and the constraints are linear. Its size is linear in $N$.
 - **Interior solutions are not guaranteed.** The saddle of the reduced game was interior, but already the full game had a boundary component ($y_{\text{nuts}}=1$). In general, finding the *support* is the difficult step, not the algebra.
 - **River structure may help.** Hands are totally ordered by showdown strength and equilibria are essentially threshold strategies, so the unknowns may collapse to a few thresholds and mixing frequencies determined by indifference conditions. That is the topic of the next parts.
 
@@ -347,7 +347,7 @@ This is a derivation device that makes the role of the interaction between the p
 **Elimination.** Drop the first component of each simplex: $x = (\sigma_2,\dots,\sigma_m)$, $y=(\tau_2,\dots,\tau_n)$, so that $\sigma_1 = 1-\mathbf 1^\top x$ and $\tau_1 = 1 - \mathbf 1^\top y$. Substituting into $\sigma^\top M\tau$ and collecting terms by type gives
 
 $$
-P(x,y) = a + b^\top x + c^\top y + x^\top D\thinspace  y,
+P(x,y) = a + b^\top x + c^\top y + x^\top D\  y,
 $$
 
 $$
@@ -359,7 +359,7 @@ $$
 **Biaffine, not bilinear.** For fixed $y$, $P$ is *affine* in $x$ (linear plus the constant $a + c^\top y$), not linear. The reason is that $x\mapsto\sigma = (1-\mathbf 1^\top x,\ x)$ is an affine map, not a linear one, and a bilinear form composed with affine maps is **biaffine**. Equivalently, with $\tilde x = (1,x)$ and $\tilde y=(1,y)$,
 
 $$
-P = \tilde x^\top \tilde M\thinspace \tilde y,\qquad \tilde M = \begin{pmatrix} a & c^\top\cr  b & D\end{pmatrix},
+P = \tilde x^\top \tilde M\ \tilde y,\qquad \tilde M = \begin{pmatrix} a & c^\top\cr  b & D\end{pmatrix},
 $$
 
 which is bilinear in $(\tilde x,\tilde y)$, but $\tilde x,\tilde y$ are not free vectors (their first component is pinned to $1$).
